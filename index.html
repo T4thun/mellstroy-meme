@@ -13,7 +13,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
@@ -21,9 +20,9 @@ body {
     position: relative;
     width: 360px;
     height: 640px;
-    background: #000;
     border-radius: 20px;
     overflow: hidden;
+    background: #000;
 }
 
 video {
@@ -47,7 +46,6 @@ button {
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -56,12 +54,12 @@ button {
 </div>
 
 <script>
-// ---------- Автоматичний список відео ----------
+// ✅ Сюди вручну додавай всі відео з папки videos
 const videos = [
     "videos/mellstroy-am-am-am-video-meme-download.mp4",
     "videos/random123.mp4",
-    "videos/mel1.mp4",
-    "videos/omg_lol.mp4"
+    "videos/omg_lol.mp4",
+    "videos/mel1.mp4"
 ];
 
 let lastVideo = "";
