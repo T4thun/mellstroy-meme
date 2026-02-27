@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 Meme Feed</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 360px;
+    height: 640px;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ff2e63;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <video id="videoPlayer" controls></video>
+    <button onclick="playRandom()">🎲 ЩЕ МЕМ</button>
+</div>
+
+<script>
+// ---------- Автоматичний список відео ----------
+const videos = [
+    "videos/mellstroy-am-am-am-video-meme-download.mp4",
+    "videos/random123.mp4",
+    "videos/mel1.mp4",
+    "videos/omg_lol.mp4"
+];
+
+let lastVideo = "";
+
+function playRandom() {
+    if(videos.length === 0) return;
+    
+    let randomVideo = videos[Math.floor(Math.random() * videos.length)];
+
+    while(randomVideo === lastVideo && videos.length > 1) {
+        randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    }
+
+    lastVideo = randomVideo;
+
+    const player = document.getElementById("videoPlayer");
+    player.src = randomVideo;
+    player.play();
+}
+</script>
+
+</body>
+</html>
